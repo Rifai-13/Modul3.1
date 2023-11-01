@@ -1,50 +1,45 @@
+import java.util.Scanner;
+
 /**
- * Kelas Lingkaran digunakan untuk menghitung luas dan keliling lingkaran.
+ * Kelas Segitiga digunakan untuk menghitung kemiringan segitiga.
  */
-public class Lingkaran {
-    private double jariJari;
+class Segitiga {
+    private double alas;
+    private double tinggi;
 
     /**
-     * Konstruktor untuk membuat objek Lingkaran dengan jari-jari tertentu.
-     *
-     * @param jariJari Panjang jari-jari lingkaran.
+     * Konstruktor kelas Segitiga.
+     * @param alasa Alas segitiga.
+     * @param tinggi Tinggi segitiga.
      */
-    public Lingkaran(double jariJari) {
-        this.jariJari = jariJari;
+    public Segitiga(double alasa, double tinggi) {
+        this.alas = alasa;
+        this.tinggi = tinggi;
     }
 
     /**
-     * Menghitung luas lingkaran.
-     *
-     * @return Luas lingkaran.
+     * Menghitung kemiringan segitiga.
+     * @return Nilai kemiringan segitiga.
      */
-    public double hitungLuas() {
-        return Math.PI * jariJari * jariJari;
+    public double hitungKemiringan() {
+        return Math.sqrt(alas * alas + tinggi * tinggi);
     }
+}
 
-    /**
-     * Menghitung keliling lingkaran.
-     *
-     * @return Keliling lingkaran.
-     */
-    public double hitungKeliling() {
-        return 2 * Math.PI * jariJari;
-    }
-
-    /**
-     * Metode utama untuk menguji kelas Lingkaran.
-     *
-     * @param args Argumen baris perintah (tidak digunakan dalam contoh ini).
-     */
+public class Main {
     public static void main(String[] args) {
-        double jariJari = 5.0;
-        Lingkaran lingkaran = new Lingkaran(jariJari);
+        Scanner input = new Scanner(System.in);
 
-        double luas = lingkaran.hitungLuas();
-        double keliling = lingkaran.hitungKeliling();
+        System.out.print("Masukkan alas segitiga: ");
+        double alas = input.nextDouble();
 
-        System.out.println("Lingkaran dengan jari-jari " + jariJari);
-        System.out.println("Luas: " + luas);
-        System.out.println("Keliling: " + keliling);
+        System.out.print("Masukkan tinggi segitiga: ");
+        double tinggi = input.nextDouble();
+
+        Segitiga segitiga = new Segitiga(alas, tinggi);
+
+        double kemiringan = segitiga.hitungKemiringan();
+
+        System.out.println("Kemiringan segitiga adalah: " + kemiringan);
     }
 }
