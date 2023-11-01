@@ -1,5 +1,7 @@
 /**
  * Kelas Lingkaran digunakan untuk menghitung luas dan keliling lingkaran.
+ *
+ * @author Rifai
  */
 public class Lingkaran {
     private double jariJari;
